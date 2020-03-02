@@ -6,7 +6,6 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 
 public class DrawShapes {
-	private ArrayList circles = new ArrayList();
 	private int radius;
 	private int x;
 	private int y;
