@@ -26,7 +26,7 @@ public class DrawShapes {
 	}
 	
 	public void grav(Graphics g){
-		y = y + radius/6;
+		y = y + radius/20;
 		drawCircles(g);
 	}
 }
