@@ -68,6 +68,7 @@ public class Window extends JFrame{
 	
 	  
   }
+  //
   
   public void render() {
 	BufferStrategy bs = canvas.getBufferStrategy();
