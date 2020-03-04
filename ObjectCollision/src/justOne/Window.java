@@ -38,12 +38,11 @@ public class Window extends JFrame{
     
     // Add the canvas to the frame (for graphics)
     add(canvas);
-    
     // Make the frame visible
     setVisible(true);
     
     // Create a buffer strategy for the canvas to get buffered rendering. 3 buffers.
-    canvas.createBufferStrategy(1);
+    canvas.createBufferStrategy(2);
     
     // Start the game loop
     startGameLoop();
@@ -73,7 +72,9 @@ public class Window extends JFrame{
 	BufferStrategy bs = canvas.getBufferStrategy();
     Graphics g = bs.getDrawGraphics();
     // This is where the drawing occurs
-    DrawShapes shape = new DrawShapes((int)(Math.random()*801), (int)(Math.random()*451), (int)(Math.random()*51));
+    g.setColor(Color.GRAY);
+    g.fillRect(0, 0, 800, 450);
+    DrawShapes shape = new DrawShapes((int)(Math.random()*801), (int)(Math.random()*451), (int)(Math.random()*51)+1);
     shapes.add(shape);
     
     gravity.grav(shapes, g);
