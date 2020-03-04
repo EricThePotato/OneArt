@@ -73,9 +73,11 @@ public class Window extends JFrame{
     Graphics g = bs.getDrawGraphics();
     // This is where the drawing occurs
     g.setColor(Color.GRAY);
-    g.fillRect(0, 0, 800, 450);
-    DrawShapes shape = new DrawShapes((int)(Math.random()*801), (int)(Math.random()*451), (int)(Math.random()*51)+1);
-    shapes.add(shape);
+    g.fillRect(0, 0, getContentPane().getWidth(), getContentPane().getHeight());
+    if(timer % 3 == 0) {
+    	DrawShapes shape = new DrawShapes((int)(Math.random()*801), (int)(Math.random()*100), (int)(Math.random()*51)+1);
+        shapes.add(shape); 
+    }
     
     gravity.grav(shapes, g);
     g.dispose();

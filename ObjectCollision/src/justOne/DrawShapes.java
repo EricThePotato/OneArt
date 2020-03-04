@@ -9,6 +9,8 @@ public class DrawShapes {
 	private int radius;
 	private int x;
 	private int y;
+	int A = 10;
+	private double v;
 	
 	DrawShapes(int xx, int yy, int radiuss){
 		x = xx;
@@ -26,10 +28,8 @@ public class DrawShapes {
 	}
 	
 	public void grav(Graphics g){
-		if(radius/6 >= 1)
-			y += radius/6;
-		else
-			y += 1;
+		v += .2;
+		y += v;
 		
 		drawCircles(g);
 	}
