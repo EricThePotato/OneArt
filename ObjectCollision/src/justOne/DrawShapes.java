@@ -9,14 +9,14 @@ public class DrawShapes {
 	private int radius;
 	private int x;
 	private int y;
-	int A = 10;
 	private double v;
+	static int height;
 	
-	DrawShapes(int xx, int yy, int radiuss){
+	DrawShapes(int xx, int yy, int radiuss, int h){
 		x = xx;
 		y = yy;
 		radius = radiuss;
-		
+		height = h;
 	}
 	
 	public void drawCircles(Graphics g){
@@ -30,6 +30,9 @@ public class DrawShapes {
 	public void grav(Graphics g){
 		v += .2;
 		y += v;
+		
+		if(y + radius >= height)		
+			v = -v;
 		
 		drawCircles(g);
 	}
