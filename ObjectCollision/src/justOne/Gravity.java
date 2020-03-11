@@ -10,9 +10,8 @@ public class Gravity{
 			for(DrawShapes t: shapes) {
 				int x = (int)(Math.abs(s.getX() - t.getX()));
 				int y = (int)(Math.abs(s.getY() - t.getY()));
-				System.out.println((int)(Math.sqrt((x*x)+(y*y))));
-				if(t.getNumber() != s.getNumber() && (int)(Math.sqrt((x*x)+(y*y))) == t.getRadius()+s.getRadius()) {
-					System.out.println("cool");
+				if(t.getNumber() != s.getNumber() && (int)(Math.sqrt((x*x)+(y*y))) == t.getRadius()+s.getRadius() || (int)(Math.sqrt((x*x)+(y*y)))-1 == t.getRadius()+s.getRadius() || (int)(Math.sqrt((x*x)+(y*y)))+1 == t.getRadius()+s.getRadius()) {
+					s.collision(g, y, t.getRadius()+s.getRadius());
 				}
 			}
 		}

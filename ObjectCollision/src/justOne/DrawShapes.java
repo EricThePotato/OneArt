@@ -42,8 +42,10 @@ public class DrawShapes {
 		drawCircles(g);
 	}
 	
-	public void collision(Graphics g) {
-		
+	public void collision(Graphics g, int y1, int total) {
+//		int v1 = y1 / total;
+//		y -= (.2 * v1);
+//		x -= (.2 * Math.abs(v1-1));
 	}
 	
 	public int getX() {
