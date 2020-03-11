@@ -10,8 +10,20 @@ public class Gravity{
 			for(DrawShapes t: shapes) {
 				int x = (int)(Math.abs(s.getX() - t.getX()));
 				int y = (int)(Math.abs(s.getY() - t.getY()));
-				if(t.getNumber() != s.getNumber() && (int)(Math.sqrt((x*x)+(y*y))) == t.getRadius()+s.getRadius() || (int)(Math.sqrt((x*x)+(y*y)))-1 == t.getRadius()+s.getRadius() || (int)(Math.sqrt((x*x)+(y*y)))+1 == t.getRadius()+s.getRadius()) {
-					s.collision(g, y, t.getRadius()+s.getRadius());
+				int sqr1 = (int)(Math.sqrt((x*x)+(y*y)));
+				int sqr2 = (int)(Math.sqrt((x*x)+(y*y))-1);
+				int sqr3 = (int)(Math.sqrt((x*x)+(y*y))+1);
+				int totalRadius = t.getRadius()+s.getRadius();
+				
+				if(t.getNumber() != s.getNumber() && sqr1 == totalRadius || sqr2 == totalRadius || sqr3 == totalRadius) {
+					if(s.getY() > t.getY()) {
+//						s.collision(g, (Math.atan((x/y)))/(Math.PI/2), t.getRadius()+s.getRadius());
+//						t.collision(g, (Math.atan((y/x)))/(Math.PI/2), t.getRadius()+s.getRadius());
+					}
+					else {
+						t.collision(g, (Math.atan((x/y)))/(Math.PI/2), t.getRadius()+s.getRadius());
+						s.collision(g, (Math.atan((y/x)))/(Math.PI/2), t.getRadius()+s.getRadius());
+					}
 				}
 			}
 		}

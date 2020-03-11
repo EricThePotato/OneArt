@@ -9,17 +9,20 @@ public class DrawShapes {
 	private int radius;
 	private int x;
 	private int y;
-	private double v;
+	private double vy;
+	private double vx;
 	static int height;
+	static int width;
 	static int counter;
 	private int number;
 	private int[] col = {(int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256)};
 	
-	DrawShapes(int xx, int yy, int radiuss, int h){
+	DrawShapes(int xx, int yy, int radiuss, int h, int w){
 		x = xx;
 		y = yy;
 		radius = radiuss;
 		height = h;
+		width = w;
 		counter++;
 		number = counter;
 	}
@@ -32,20 +35,24 @@ public class DrawShapes {
 	}
 	
 	public void grav(Graphics g){
-		v += .2;
-		y += v;
+		if(x + radius < width || x - radius > 0) {
+			vy += .2;
+			y += vy;
+		}
 		if(y + radius > height)
 			y = height-radius;
 		
 		if(y + radius >= height)		
-			v = -0.75*v + 1.5;
+			vy = -0.75*vy + 1.5;
+		x += vx;
 		drawCircles(g);
 	}
 	
-	public void collision(Graphics g, int y1, int total) {
-//		int v1 = y1 / total;
-//		y -= (.2 * v1);
-//		x -= (.2 * Math.abs(v1-1));
+	public void collision(Graphics g, double d, int total) {
+		vy -= 10 * d;
+		vx = 10 * 1-d;
+		y += vy;
+		x += vx;
 	}
 	
 	public int getX() {

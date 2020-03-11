@@ -75,7 +75,7 @@ public class Window extends JFrame{
     g.setColor(Color.GRAY);
     g.fillRect(0, 0, getContentPane().getWidth(), getContentPane().getHeight());
     if(timer % 30 == 0) {
-    	DrawShapes shape = new DrawShapes((int)(Math.random()*801), (int)(Math.random()*100), (int)(Math.random()*51)+1, getContentPane().getHeight());
+    	DrawShapes shape = new DrawShapes((int)(Math.random()*getContentPane().getWidth()-60)+30, (int)(Math.random()*100), (int)(Math.random()*51)+1, getContentPane().getHeight(), getContentPane().getWidth());
         shapes.add(shape); 
     }
     
