@@ -17,12 +17,12 @@ public class Gravity{
 				
 				if(t.getNumber() != s.getNumber() && sqr1 == totalRadius || sqr2 == totalRadius || sqr3 == totalRadius) {
 					if(s.getY() > t.getY()) {
-//						s.collision(g, (Math.atan((x/y)))/(Math.PI/2), t.getRadius()+s.getRadius());
-//						t.collision(g, (Math.atan((y/x)))/(Math.PI/2), t.getRadius()+s.getRadius());
+						s.collision(g, (Math.atan((x/(y+.01))))/(Math.PI/2), t.getRadius()+s.getRadius(), true, true);
+						t.collision(g, (Math.atan((y/(x+.01))))/(Math.PI/2), t.getRadius()+s.getRadius(), true, true);
 					}
 					else {
-						t.collision(g, (Math.atan((x/y)))/(Math.PI/2), t.getRadius()+s.getRadius());
-						s.collision(g, (Math.atan((y/x)))/(Math.PI/2), t.getRadius()+s.getRadius());
+						t.collision(g, (Math.atan((x/(y+.01))))/(Math.PI/2), t.getRadius()+s.getRadius(), true, true);
+						s.collision(g, (Math.atan((y/(x+.01))))/(Math.PI/2), t.getRadius()+s.getRadius(), true, true);
 					}
 				}
 			}

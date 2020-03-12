@@ -48,9 +48,9 @@ public class DrawShapes {
 		drawCircles(g);
 	}
 	
-	public void collision(Graphics g, double d, int total) {
-		vy -= 10 * d;
-		vx = 10 * 1-d;
+	public void collision(Graphics g, double d, int total, boolean right, boolean up) {
+		vy -= 5 * d;
+		vx = 5 * 1-d;
 		y += vy;
 		x += vx;
 	}
