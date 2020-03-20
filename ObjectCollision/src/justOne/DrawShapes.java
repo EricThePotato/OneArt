@@ -43,7 +43,7 @@ public class DrawShapes {
 			y = height-radius;
 		
 		if(y + radius >= height)		
-			vy = -0.75*vy + 1.5;
+			vy = -0.75*vy + 1.2;
 		x += vx;
 		drawCircles(g);
 	}
